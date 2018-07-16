@@ -1,7 +1,7 @@
 # A minimal React/Express starter project setup
 ## 1. NPM packages to install
 #### Essential install
-Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See below for descriptions.
+Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
 ```
 npm i --save react react-dom express
 npm i --save-dev webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-object-rest-spread jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
