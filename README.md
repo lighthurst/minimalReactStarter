@@ -41,8 +41,8 @@ Add each of these properties to your package.json file.
   "test": "jest",
   "start": "nodemon server/index.js"
 }
-> If you do not have nodemon globally installed, `npm i -g nodemon`
 ```
+> If you do not have nodemon globally installed, `npm i -g nodemon`
 ## 3. Webpack.config.js
 Configure your webpack file to this.
 ```javascript
