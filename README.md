@@ -1,20 +1,20 @@
 # A minimal React/Express starter project setup
-## NPM packages to install
+## 1. NPM packages to install
 #### Essential install
-1. Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See below for descriptions.
+Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See below for descriptions.
 ```
 npm i --save react react-dom express
 npm i --save-dev webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-object-rest-spread jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
 ```
 #### Optional install
-1. Install the linter ESLint configured with Airbnb's rules.
+Install the linter ESLint configured with Airbnb's rules.
 ```
 npx install-peerdeps --dev eslint-config-airbnb
 npm i --save-dev eslint-loader babel-eslint
 ```
 > The npx command above is a node > 5.0 shortcut installing peerdeps for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
-## Package.json property additions
-2. Add each of these properties to your package.json file.
+## 2. Package.json property additions
+Add each of these properties to your package.json file.
 #### babel
 ```JSON
 "babel": {
@@ -42,8 +42,8 @@ npm i --save-dev eslint-loader babel-eslint
 "start": "nodemon server/index.js"
 }
 ```
-## Webpack.config.js
-3. Configure your webpack file to this.
+## 3. Webpack.config.js
+Configure your webpack file to this.
 ```javascript
 const path = require('path');
 const SRC_DIR = path.join(__dirname, '/client/src');
@@ -73,8 +73,8 @@ module.exports = {
   devtool: 'cheap-eval-source-map',
 };
 ```
-## Jest setupTestFiles.js
-4. Configure your jest setup file like this.
+## 4. Jest setupTestFiles.js
+Configure your jest setup file like this.
 ```javascript
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -86,8 +86,8 @@ global.render = render;
 global.mount = mount;
 
 ```
-## Index.html
-5. Configure your index.html file like this.
+## 5. Index.html
+Configure your index.html file like this.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -103,8 +103,8 @@ global.mount = mount;
 </body>
 </html>
 ```
-## Folder structure
-6. Configure your folder structure like this.
+## 6. Folder structure
+Configure your folder structure like this.
 ```
 .
 ├── client
@@ -167,9 +167,9 @@ babel-eslint | It allows you to lint ALL valid Babel code with the fantastic 
 Pkg. | Desc.
 --- | ---
 jest | Delightful JavaScript Testing.
-jest-enzyme | 
-enzyme | 
-enzyme-adapter-react-16 | 
+jest-enzyme | To properly use Jest with Enzyme.
+enzyme | JavaScript Testing utility for React.
+enzyme-adapter-react-16 | An Adapter corresponding to the version of react you are using.
 #### Environment variables: Essential
 Pkg. | Desc.
 --- | ---
