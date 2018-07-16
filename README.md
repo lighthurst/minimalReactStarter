@@ -18,28 +18,28 @@ Add each of these properties to your package.json file.
 #### babel
 ```JSON
 "babel": {
-"presets": [ "env", "react" ],
-"plugins": [ "transform-object-rest-spread” ]
+ "presets": [ "env", "react" ],
+ "plugins": [ "transform-object-rest-spread” ]
 }
 ```
 #### eslint
 ```JSON
 "eslintConfig”: { 
-"extends": "airbnb” 
+ "extends": "airbnb” 
 }
 ```
 #### jest
 ```JSON
 "jest": { 
-"setupFiles": ["./client/spec/setupTestFiles.js"]
+ "setupFiles": ["./client/spec/setupTestFiles.js"]
 }
 ```
 #### scripts
 ```JSON
 "scripts": {
-"build": "webpack -d --watch",
-"test": "jest",
-"start": "nodemon server/index.js"
+ "build": "webpack -d --watch",
+ "test": "jest",
+ "start": "nodemon server/index.js"
 }
 ```
 ## 3. Webpack.config.js
@@ -52,11 +52,11 @@ const DIST_DIR = path.join(__dirname, '/public');
 module.exports = {
   mode: 'development',
   entry: {
-	client: `${SRC_DIR}/index.jsx`,
+	  client: `${SRC_DIR}/index.jsx`,
   },
   output: {
-	path: DIST_DIR,
-	filename: '[name]-bundle.js',
+	  path: DIST_DIR,
+	  filename: '[name]-bundle.js',
   },
   module: {
     rules: [
@@ -132,12 +132,12 @@ Configure your folder structure like this.
 You're all minimally set up now.
 
 ## Appendix: NPM packages explained
-#### Front end libraries/frameworks: Essential
+#### Front-end libraries/frameworks: Essential
 Pkg. | Desc.
 --- | ---
 react | A JavaScript library for building user interfaces.
 react-dom | The entry point of the DOM-related rendering paths, intended to be paired with the isomorphic React.
-#### Front end bundling: Essential
+#### Front-end bundling: Essential
 Pkg. | Desc.
 --- | ---
 webpack | A bundler for Javascript module files for usage in a browser.
@@ -146,23 +146,13 @@ babel-loader | Webpack plugin for Babel.
 babel-preset-env | A Babel preset that compiles ES2015+ down to ES5 by automatically determining the Babel plugins and polyfills you need based on your targeted browser or runtime environments. Without any configuration options, babel-preset-env behaves exactly the same as babel-preset-latest (or babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 together).
 babel-preset-react | Converts JSX syntax and strips out type annotations.
 babel-plugin-transform-object-rest-spread | Allows Babel to transform rest properties for object destructuring assignment and spread properties for object literals.
-#### Front end bundling: optional
+#### Front-end bundling: optional
 Pkg. | Desc.
 --- | ---
 html-webpack-plugin | 
 html-loader | 
 css-loader | 
 mini-css-extract-plugin | 
-#### Linting: optional
-Pkg. | Desc.
---- | ---
-eslint-config-airbnb | Airbnb's .eslintrc as an extensible shared config.
-eslint (a dependency) | A popular linter.
-eslint-plugin-import (a dependency) | Supports linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
-eslint-plugin-jsx (a dependency) | JSX specific linting rules for ESLint.
-eslint-plugin-react (a dependency) | React specific linting rules for ESLint.
-eslint-loader | ESLint loader for webpack. When using with transpiling loaders (like babel-loader), make sure they are in correct order (bottom to top, e.g., use: ["babel-loader", "eslint-loader” ]). Otherwise files will be checked after being processed by babel-loader.
-babel-eslint | It allows you to lint ALL valid Babel code with the fantastic ESLint. You only need to use it if you are using types (Flow) or experimental features not supported in ESLint itself yet. Otherwise try the default parser (you don't have to use it just because you are using Babel).
 #### Testing: Essential
 Pkg. | Desc.
 --- | ---
@@ -179,3 +169,13 @@ dotenv-webpack | A dotenv plugin for webpack.
 Pkg. | Desc.
 --- | ---
 express | A fast, unopinionated, minimalist web framework for node.
+#### Linting: optional
+Pkg. | Desc.
+--- | ---
+eslint-config-airbnb | Airbnb's .eslintrc as an extensible shared config.
+eslint (a dependency) | A popular linter.
+eslint-plugin-import (a dependency) | Supports linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
+eslint-plugin-jsx (a dependency) | JSX specific linting rules for ESLint.
+eslint-plugin-react (a dependency) | React specific linting rules for ESLint.
+eslint-loader | ESLint loader for webpack. When using with transpiling loaders (like babel-loader), make sure they are in correct order (bottom to top, e.g., use: ["babel-loader", "eslint-loader” ]). Otherwise files will be checked after being processed by babel-loader.
+babel-eslint | It allows you to lint ALL valid Babel code with the fantastic ESLint. You only need to use it if you are using types (Flow) or experimental features not supported in ESLint itself yet. Otherwise try the default parser (you don't have to use it just because you are using Babel).
