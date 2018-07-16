@@ -1,0 +1,4 @@
+node_modules/
+.env
+public/client-bundle.js
+.DSStore
