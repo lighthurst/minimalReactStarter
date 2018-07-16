@@ -173,9 +173,9 @@ express | A fast, unopinionated, minimalist web framework for node.
 Pkg. | Desc.
 --- | ---
 eslint-config-airbnb | Airbnb's .eslintrc as an extensible shared config.
-eslint (a dependency) | A popular linter.
-eslint-plugin-import (a dependency) | Supports linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
-eslint-plugin-jsx (a dependency) | JSX specific linting rules for ESLint.
-eslint-plugin-react (a dependency) | React specific linting rules for ESLint.
+eslint | A popular linter.
+eslint-plugin-import | Supports linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
+eslint-plugin-jsx | JSX specific linting rules for ESLint.
+eslint-plugin-react | React specific linting rules for ESLint.
 eslint-loader | ESLint loader for webpack. When using with transpiling loaders (like babel-loader), make sure they are in correct order (bottom to top, e.g., use: ["babel-loader", "eslint-loader” ]). Otherwise files will be checked after being processed by babel-loader.
 babel-eslint | It allows you to lint ALL valid Babel code with the fantastic ESLint. You only need to use it if you are using types (Flow) or experimental features not supported in ESLint itself yet. Otherwise try the default parser (you don't have to use it just because you are using Babel).
