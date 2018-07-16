@@ -18,8 +18,8 @@ Add each of these properties to your package.json file.
 #### babel
 ```JSON
 "babel": {
- "presets": [ "env", "react" ],
- "plugins": [ "transform-object-rest-spread” ]
+  "presets": [ "env", "react" ],
+  "plugins": [ "transform-object-rest-spread” ]
 }
 ```
 #### eslint
