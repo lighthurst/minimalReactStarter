@@ -169,7 +169,7 @@ dotenv-webpack | A dotenv plugin for webpack.
 Pkg. | Desc.
 --- | ---
 express | A fast, unopinionated, minimalist web framework for node.
-#### Linting: optional
+#### Linting: Optional
 Pkg. | Desc.
 --- | ---
 eslint-config-airbnb | Airbnb's .eslintrc as an extensible shared config.
