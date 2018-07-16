@@ -25,21 +25,21 @@ Add each of these properties to your package.json file.
 #### eslint
 ```JSON
 "eslintConfig”: { 
- "extends": "airbnb” 
+  "extends": "airbnb” 
 }
 ```
 #### jest
 ```JSON
 "jest": { 
- "setupFiles": ["./client/spec/setupTestFiles.js"]
+  "setupFiles": ["./client/spec/setupTestFiles.js"]
 }
 ```
 #### scripts
 ```JSON
 "scripts": {
- "build": "webpack -d --watch",
- "test": "jest",
- "start": "nodemon server/index.js"
+  "build": "webpack -d --watch",
+  "test": "jest",
+  "start": "nodemon server/index.js"
 }
 ```
 ## 3. Webpack.config.js
@@ -52,11 +52,11 @@ const DIST_DIR = path.join(__dirname, '/public');
 module.exports = {
   mode: 'development',
   entry: {
-	  client: `${SRC_DIR}/index.jsx`,
+    client: `${SRC_DIR}/index.jsx`,
   },
   output: {
-	  path: DIST_DIR,
-	  filename: '[name]-bundle.js',
+    path: DIST_DIR,
+    filename: '[name]-bundle.js',
   },
   module: {
     rules: [
