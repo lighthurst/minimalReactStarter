@@ -45,7 +45,7 @@ Add jest, babel, eslint, and custom script properties to your package.json file.
 ```
 > If you do not have nodemon globally installed, `npm i -g nodemon`
 ## 3. Folder structure
-Configure your folder structure like this.
+Configure your folder structure like this:
 ```
 .
 ├── client
