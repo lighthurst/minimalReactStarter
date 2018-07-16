@@ -2,10 +2,10 @@
 Here are six things to do to start a minimal React/Express web app from scratch.
 1. Install your NPM packages.
 2. Add properties to your package.json file.
-3. Configure your webpack file.
-4. Set up your Jest/Enzyme testing file.
-5. Draft your index.html file.
-6. Configure a proper folder structure.
+3. Configure a proper folder structure.
+4. Configure your webpack file.
+5. Set up your Jest/Enzyme testing file.
+6. Draft your index.html file.
 ## 1. NPM packages
 #### Essential
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
@@ -16,30 +16,24 @@ npm i --save-dev webpack webpack-cli babel-core babel-loader babel-preset-env ba
 #### Optional
 Install the linter ESLint configured with Airbnb's rules.
 ```
-npx install-peerdeps --dev eslint-config-airbnb
-npm i --save-dev eslint-loader babel-eslint
+npx install-peerdeps --dev eslint-config-airbnb
+npm i --save-dev eslint-loader eslint-plugin-ejs babel-eslint
 ```
-> The npx command above is a node > 5.0 shortcut installing peerdeps for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
+> The npx command above is an npm 5+ shortcut installing peerdeps for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
 ## 2. Package.json
-Add babel, eslint, jest, and custom script properties to your package.json file.
-#### babel
-```JSON
-"babel": {
-  "presets": [ "env", "react" ],
-  "plugins": [ "transform-object-rest-spread” ]
-}
-```
-#### eslint
-```JSON
-"eslintConfig”: { 
-  "extends": "airbnb” 
-}
-```
-#### jest
+Add jest, babel, eslint, and custom script properties to your package.json file.
+#### jest, babel, eslint
 ```JSON
 "jest": { 
   "setupFiles": ["./client/spec/setupTestFiles.js"]
-}
+},
+"babel": {
+  "presets": [ "env", "react" ],
+  "plugins": [ "transform-object-rest-spread" ]
+},
+"eslintConfig": { 
+  "extends": "airbnb"
+},
 ```
 #### scripts
 ```JSON
@@ -47,10 +41,36 @@ Add babel, eslint, jest, and custom script properties to your package.json file.
   "build": "webpack -d --watch",
   "test": "jest",
   "start": "nodemon server/index.js"
-}
+},
 ```
 > If you do not have nodemon globally installed, `npm i -g nodemon`
-## 3. Webpack.config.js
+## 3. Folder structure
+Configure your folder structure like this.
+```
+.
+├── client
+│   ├── spec
+│       ├── __tests__
+│   	    ├── App.test.jsx
+│   	    ├── ...
+│       ├── setupTestFiles.js	 	
+│   ├── src
+│       ├── components
+│   	     ├── App.jsx
+│   	     ├── ...
+│   	├── index.jsx	 	
+├── public
+│   ├── ...          						
+│   ├── index.html
+├── server
+│   ├── ...          							
+│   ├── index.js          				
+├── .env
+├── .gitignore
+├── ...
+└── webpack.config.js
+```
+## 4. Webpack.config.js
 Configure your minimal webpack file.
 ```javascript
 const path = require('path');
@@ -80,8 +100,9 @@ module.exports = {
   },
   devtool: 'cheap-eval-source-map',
 };
+
 ```
-## 4. Jest setupTestFiles.js
+## 5. Jest setupTestFiles.js
 Set up your jest test file.
 ```javascript
 import Enzyme, { shallow, render, mount } from 'enzyme';
@@ -94,7 +115,7 @@ global.render = render;
 global.mount = mount;
 
 ```
-## 5. Index.html
+## 6. Index.html
 Draft your index.html file ensuring a proper div id referenced in your index.jsx and a proper script source referenced in your webpack config. file.
 ```html
 <!DOCTYPE html>
@@ -110,32 +131,7 @@ Draft your index.html file ensuring a proper div id referenced in your index.jsx
   <script type="text/javascript" src="client-bundle.js"></script>
 </body>
 </html>
-```
-## 6. Folder structure
-Configure your folder structure like this.
-```
-.
-├── client
-│   ├── spec
-│       ├── __tests__
-│   	    ├── App.test.jsx
-│   	    ├── ...
-│       ├── setupTestFiles.js	 	
-│   ├── src
-│       ├── components
-│   	     ├── App.jsx
-│   	     ├── ...
-│   	├── index.jsx	 	
-├── public
-│   ├── ...          						
-│   ├── index.html
-├── server
-│   ├── ...          							
-│   ├── index.js          				
-├── .env
-├── .gitignore
-├── ...
-└── webpack.config.js
+
 ```
 You're all minimally set up now.
 
@@ -186,4 +182,5 @@ eslint-plugin-import | Supports linting of ES2015+ (ES6+) import/export syntax, 
 eslint-plugin-jsx | JSX specific linting rules for ESLint.
 eslint-plugin-react | React specific linting rules for ESLint.
 eslint-loader | ESLint loader for webpack. When using with transpiling loaders (like babel-loader), make sure they are in correct order (bottom to top, e.g., use: ["babel-loader", "eslint-loader” ]). Otherwise files will be checked after being processed by babel-loader.
+eslint-plugin-ejs | Parses out ejs declarations found in js and jsx files.
 babel-eslint | It allows you to lint ALL valid Babel code with the fantastic ESLint. You only need to use it if you are using types (Flow) or experimental features not supported in ESLint itself yet. Otherwise try the default parser (you don't have to use it just because you are using Babel).
