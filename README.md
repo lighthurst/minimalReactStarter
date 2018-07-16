@@ -1,4 +1,11 @@
 # A minimal React/Express starter project setup
+Here are six things to do to start a minimal React/Express web app from scratch.
+1. Install your NPM packages.
+2. Add properties to your package.json file.
+3. Configure your webpack file.
+4. Set up your Jest/Enzyme testing file.
+5. Draft your index.html file.
+6. Configure a proper folder structure.
 ## 1. NPM packages to install
 #### Essential install
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
@@ -14,7 +21,7 @@ npm i --save-dev eslint-loader babel-eslint
 ```
 > The npx command above is a node > 5.0 shortcut installing peerdeps for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
 ## 2. Package.json property additions
-Add each of these properties to your package.json file.
+Add babel, eslint, jest, and custom script properties to your package.json file.
 #### babel
 ```JSON
 "babel": {
@@ -44,7 +51,7 @@ Add each of these properties to your package.json file.
 ```
 > If you do not have nodemon globally installed, `npm i -g nodemon`
 ## 3. Webpack.config.js
-Configure your webpack file to this.
+Configure your minimal webpack file.
 ```javascript
 const path = require('path');
 const SRC_DIR = path.join(__dirname, '/client/src');
@@ -75,7 +82,7 @@ module.exports = {
 };
 ```
 ## 4. Jest setupTestFiles.js
-Configure your jest setup file like this.
+Set up your jest test file.
 ```javascript
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -88,7 +95,7 @@ global.mount = mount;
 
 ```
 ## 5. Index.html
-Configure your index.html file like this.
+Draft your index.html file ensuring a proper div id referenced in your index.jsx and a proper script source referenced in your webpack config. file.
 ```html
 <!DOCTYPE html>
 <html lang="en">
