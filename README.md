@@ -19,7 +19,7 @@ Install the linter ESLint configured with Airbnb's rules.
 npx install-peerdeps --dev eslint-config-airbnb
 npm i --save-dev eslint-loader eslint-plugin-ejs babel-eslint
 ```
-> The npx command above is an npm 5+ shortcut installing peerdeps for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
+> The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
 ## 2. Package.json
 Add jest, babel, eslint, and custom script properties to your package.json file.
 #### jest, babel, eslint
