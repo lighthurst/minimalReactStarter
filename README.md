@@ -10,16 +10,17 @@ Here are six things to do to start a minimal React/Express web app from scratch.
 #### Essential
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
 ```
-npm i --save dotenv react react-dom express
-npm i --save-dev webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-object-rest-spread jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
+npm i -P dotenv react react-dom express
+npm i -D webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-object-rest-spread jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
 ```
+> September 9, 2018: Note that this starter repo version installs Babel 6, not the latest Babel 7 and related presets, plugins, and loaders. While there are updates for most, Jest continues to depend on Babel 6. We will update this starter repo when all packages properly work with Babel 7.
 #### Optional
 Install the linter ESLint configured with Airbnb's rules.
 ```
 npx install-peerdeps --dev eslint-config-airbnb
-npm i --save-dev eslint-loader eslint-plugin-ejs babel-eslint
+npm i --D eslint-loader eslint-plugin-ejs babel-eslint
 ```
-> The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm install eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 --save-dev`
+> The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm i eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 -D`
 ## 2. Package.json
 Add jest, babel, eslint, and custom script properties to your package.json file.
 #### jest, babel, eslint
