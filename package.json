@@ -1,43 +1,34 @@
 {
-  "name": "minimalReactStarter",
-  "version": "1.0.0",
+  "name": "minimalreactstarter",
+  "version": "1.0.1",
   "description": "A minimal React/Express web app starter project",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack -d --watch",
-    "test": "jest",
-    "start": "nodemon server/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lighthurst/minimalReactStarter.git"
-  },
-  "keywords": [],
-  "author": "",
+  "browser": "server/index.js",
+  "repository": "github:lighthurst/minimalReactStarter",
+  "keywords": ["React", "starter"],
+  "author": "Aaron Tesfai",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lighthurst/minimalReactStarter/issues"
-  },
+  "bugs": { "url": "https://github.com/lighthurst/minimalReactStarter/issues" },
   "homepage": "https://github.com/lighthurst/minimalReactStarter#readme",
-  "jest": {
-    "setupFiles": [
-      "./client/spec/setupTestFiles.js"
-    ]
+  "engines" : { "node" : ">=8.9.4" },
+  "scripts": {
+    "build": "webpack -d",
+    "serve": "node server/index.js",
+    "start": "npm run build && npm run serve",
+    "build-dev": "webpack -d --watch",
+    "serve-dev": "nodemon server/index.js",
+    "start-dev": "npm run build-dev & npm run serve-dev",
+    "test": "jest"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
+  "babel": { 
+    "presets": [ "env", "react" ],
+    "plugins": [ "transform-object-rest-spread" ]
   },
-  "eslintConfig": {
-    "extends": "airbnb"
-  },
+  "eslintConfig": { "extends": "airbnb" },
+  "jest": { "setupFiles": [ "./client/spec/setupTestFiles.js" ] },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
@@ -48,7 +39,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "dotenv": "^6.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
