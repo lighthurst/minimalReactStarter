@@ -10,7 +10,7 @@ Here are six things to do to start a minimal React/Express web app from scratch.
 #### Essential
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
 ```
-npm i --save react react-dom express
+npm i --save dotenv react react-dom express
 npm i --save-dev webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-object-rest-spread jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
 ```
 #### Optional
@@ -31,16 +31,18 @@ Add jest, babel, eslint, and custom script properties to your package.json file.
   "presets": [ "env", "react" ],
   "plugins": [ "transform-object-rest-spread" ]
 },
-"eslintConfig": { 
-  "extends": "airbnb"
-},
+"eslintConfig": { "extends": "airbnb" },
 ```
 #### scripts
 ```JSON
 "scripts": {
-  "build": "webpack -d --watch",
-  "test": "jest",
-  "start": "nodemon server/index.js"
+  "build": "webpack -d",
+  "serve": "node server/index.js",
+  "start": "npm run build && npm run serve",
+  "build-dev": "webpack -d --watch",
+  "serve-dev": "nodemon server/index.js",
+  "start-dev": "npm run build-dev & npm run serve-dev",
+  "test": "jest"
 },
 ```
 > If you do not have nodemon globally installed, `npm i -g nodemon`
@@ -129,7 +131,7 @@ Draft your index.html file ensuring a proper div id referenced in your index.jsx
   <title>Your Website Name</title>
 </head>
 <body>
-  <div id="app">This should disappear if you hook up React.</div>
+  <div id="app"></div>
   <script type="text/javascript" src="client-bundle.js"></script>
 </body>
 </html>
@@ -155,10 +157,11 @@ babel-plugin-transform-object-rest-spread | Allows Babel to transform rest prope
 #### Front-end bundling: optional
 Pkg. | Desc.
 --- | ---
+css-loader | 
+style-loader | 
+mini-css-extract-plugin | 
 html-webpack-plugin | 
 html-loader | 
-css-loader | 
-mini-css-extract-plugin | 
 #### Testing: Essential
 Pkg. | Desc.
 --- | ---
