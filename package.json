@@ -4,7 +4,7 @@
   "description": "A minimal React/Express web app starter project",
   "browser": "server/index.js",
   "repository": "github:lighthurst/minimalReactStarter",
-  "keywords": ["React", "starter"],
+  "keywords": [ "react", "starter-template", "zero-configuration", "build-tools" ],
   "author": "Aaron Tesfai",
   "license": "ISC",
   "bugs": { "url": "https://github.com/lighthurst/minimalReactStarter/issues" },
