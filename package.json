@@ -4,12 +4,21 @@
   "description": "A minimal React/Express web app starter project",
   "browser": "server/index.js",
   "repository": "github:lighthurst/minimalReactStarter",
-  "keywords": [ "react", "starter-template", "zero-configuration", "build-tools" ],
+  "keywords": [
+    "react",
+    "starter-template",
+    "zero-configuration",
+    "build-tools"
+  ],
   "author": "Aaron Tesfai",
   "license": "ISC",
-  "bugs": { "url": "https://github.com/lighthurst/minimalReactStarter/issues" },
+  "bugs": {
+    "url": "https://github.com/lighthurst/minimalReactStarter/issues"
+  },
   "homepage": "https://github.com/lighthurst/minimalReactStarter#readme",
-  "engines" : { "node" : ">=8.9.4" },
+  "engines": {
+    "node": ">=8.9.4"
+  },
   "scripts": {
     "build": "webpack -d",
     "serve": "node server/index.js",
@@ -19,12 +28,21 @@
     "start-dev": "npm run build-dev & npm run serve-dev",
     "test": "jest"
   },
-  "babel": { 
-    "presets": [ "env", "react" ],
-    "plugins": [ "transform-object-rest-spread" ]
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
   },
-  "eslintConfig": { "extends": "airbnb" },
-  "jest": { "setupFiles": [ "./client/spec/setupTestFiles.js" ] },
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
+  "jest": {
+    "setupFiles": [
+      "./client/spec/setupTestFiles.js"
+    ]
+  },
   "dependencies": {
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -36,9 +54,9 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
