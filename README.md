@@ -153,7 +153,7 @@ babel-core | The Babel compiler core—Babel converts ECMAScript 2015+ code into
 babel-loader | Webpack plugin for Babel.
 babel-preset-env | A Babel preset that compiles ES2015+ down to ES5 by automatically determining the Babel plugins and polyfills you need based on your targeted browser or runtime environments. Without any configuration options, babel-preset-env behaves exactly the same as babel-preset-latest (or babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 together).
 babel-preset-react | Converts JSX syntax and strips out type annotations.
-babel-plugin-preset-stage-2 | A Babel preset that includes all ECMAScript TC39 Stage 3 candidate and Stage 2 draft proposals, including the plugins transform-object-rest-spread (Stage 3) and transform-class-properties (Stage 2).
+babel-plugin-preset-stage-2 | A Babel preset that includes all ECMAScript TC39 Stage 3 candidates and Stage 2 drafts, including the plugins transform-object-rest-spread (Stage 3) and transform-class-properties (Stage 2). See the [ECMAScript TC39 Github page](https://github.com/tc39/proposals) for more information on current proposals and the [TC39 Committee Process Document](https://tc39.github.io/process-document/) for stage definitions.'
 #### Front-end bundling: optional
 Pkg. | Desc.
 --- | ---
