@@ -11,7 +11,7 @@ Here are six things to do to start a minimal React/Express web app from scratch.
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
 ```
 npm i -P dotenv react react-dom express
-npm i -D webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-object-rest-spread jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
+npm i -D webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-preset-stage-2 jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
 ```
 > September 9, 2018: Note that this starter repo version installs Babel 6, not the latest Babel 7 and related presets, plugins, and loaders. While there are updates for most, Jest continues to depend on Babel 6. We will update this starter repo when all packages properly work with Babel 7.
 #### Optional
@@ -29,8 +29,7 @@ Add jest, babel, eslint, and custom script properties to your package.json file.
   "setupFiles": ["./client/spec/setupTestFiles.js"]
 },
 "babel": {
-  "presets": [ "env", "react" ],
-  "plugins": [ "transform-object-rest-spread" ]
+  "presets": [ "env", "react", "stage-2" ]
 },
 "eslintConfig": { "extends": "airbnb" },
 ```
@@ -154,7 +153,7 @@ babel-core | The Babel compiler core—Babel converts ECMAScript 2015+ code into
 babel-loader | Webpack plugin for Babel.
 babel-preset-env | A Babel preset that compiles ES2015+ down to ES5 by automatically determining the Babel plugins and polyfills you need based on your targeted browser or runtime environments. Without any configuration options, babel-preset-env behaves exactly the same as babel-preset-latest (or babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 together).
 babel-preset-react | Converts JSX syntax and strips out type annotations.
-babel-plugin-transform-object-rest-spread | Allows Babel to transform rest properties for object destructuring assignment and spread properties for object literals.
+babel-plugin-preset-stage-2 | A Babel preset that includes all ECMAScript TC39 Stage 3 and 2 proposals, including the plugins transform-rest properties and transform-class-properties.
 #### Front-end bundling: optional
 Pkg. | Desc.
 --- | ---
