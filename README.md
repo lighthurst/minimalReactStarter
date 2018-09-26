@@ -53,7 +53,7 @@ Add jest, babel, eslint, and custom script properties to your package.json file.
   "test": "jest"
 },
 ```
-> Globally install nodemon if you don't have it already, `npm i -g nodemon`
+> Globally install nodemon if you don't have it already: `npm i -g nodemon`
 ## 3. Folder structure
 Configure your folder structure like this:
 ```
