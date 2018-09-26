@@ -1,6 +1,6 @@
 {
   "name": "minimalreactstarter",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A minimal React/Express web app starter project",
   "browser": "server/index.js",
   "repository": "github:lighthurst/minimalReactStarter",
@@ -32,18 +32,21 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "babel": {
     "presets": [
-      "env",
-      "react",
-      "stage-2"
+      "@babel/env",
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "eslintConfig": {
-    "extends": "airbnb"
+    "extends": "airbnb",
+    "parser": "babel-eslint"
   },
   "jest": {
     "setupFiles": [
@@ -51,24 +54,27 @@
     ]
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-loader": "^2.0.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.2",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-ejs": "0.0.2",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
-    "jest": "^23.4.1",
-    "jest-enzyme": "^6.0.2",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8"
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^6.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
   }
 }
