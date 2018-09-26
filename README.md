@@ -10,28 +10,32 @@ Here are six things to do to start a minimal React/Express web app from scratch.
 #### Essential
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
 ```
-npm i -P dotenv react react-dom express
-npm i -D webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react babel-preset-stage-2 jest jest-enzyme enzyme enzyme-adapter-react-16 dotenv
+npm i -P react react-dom prop-types express dotenv
+npm i -D webpack webpack-cli @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-class-properties jest babel-jest babel-core@^7.0.0-bridge.0 jest-enzyme enzyme enzyme-adapter-react-16
 ```
-> September 9, 2018: Note that this starter repo version installs Babel 6, not the latest Babel 7 and related presets, plugins, and loaders. While there are updates for most, Jest continues to depend on Babel 6. We will update this starter repo when all packages properly work with Babel 7.
+> Why babel-core@^7.0.0-bridge.0: [Jest](https://jestjs.io/docs/en/getting-started#using-babel)
 #### Optional
 Install the linter ESLint configured with Airbnb's rules.
 ```
 npx install-peerdeps --dev eslint-config-airbnb
 npm i --D eslint-loader eslint-plugin-ejs babel-eslint
 ```
-> The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm i eslint-config-airbnb@17.0.0 eslint@^4.19.1 eslint-plugin-import@^2.12.0 eslint-plugin-jsx-a11y@^6.0.3 eslint-plugin-react@^7.9.1 -D`
+> The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm i -D eslint-config-airbnb@17.1.0 eslint@^5.6.0 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.1 eslint-plugin-react@^7.11.1`
 ## 2. Package.json
 Add jest, babel, eslint, and custom script properties to your package.json file.
 #### jest, babel, eslint
 ```JSON
 "jest": { 
-  "setupFiles": ["./client/spec/setupTestFiles.js"]
+  "setupFiles": [ "./client/spec/setupTestFiles.js" ]
 },
 "babel": {
-  "presets": [ "env", "react", "stage-2" ]
+  "presets": [ "@babel/env", "@babel/react" ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
 },
-"eslintConfig": { "extends": "airbnb" },
+"eslintConfig": { "extends": "airbnb", "parser": "babel-eslint" },
 ```
 #### scripts
 ```JSON
@@ -149,11 +153,11 @@ react-dom | The entry point of the DOM-related rendering paths, intended to be p
 Pkg. | Desc.
 --- | ---
 webpack | A bundler for Javascript module files for usage in a browser.
-babel-core | The Babel compiler core—Babel converts ECMAScript 2015+ code into a backwards compatible version of JavaScript in old browsers or environments.
+@babel/core | The Babel compiler core—Babel converts ECMAScript 2015+ code into a backwards compatible version of JavaScript in old browsers or environments.
 babel-loader | Webpack plugin for Babel.
-babel-preset-env | A Babel preset that compiles ES2015+ down to ES5 by automatically determining the Babel plugins and polyfills you need based on your targeted browser or runtime environments. Without any configuration options, babel-preset-env behaves exactly the same as babel-preset-latest (or babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 together).
-babel-preset-react | Converts JSX syntax and strips out type annotations.
-babel-plugin-preset-stage-2 | A Babel preset that includes all ECMAScript TC39 Stage 3 candidates and Stage 2 drafts, including the plugins transform-object-rest-spread (Stage 3 at the time) and transform-class-properties (Stage 2 at the time). See the [ECMAScript TC39 Github page](https://github.com/tc39/proposals) for more information on current proposals and the [TC39 Committee Process Document](https://tc39.github.io/process-document/) for stage definitions.
+@babel/preset-env | A Babel preset that compiles ES2015+ down to ES5 by automatically determining the Babel plugins and polyfills you need based on your targeted browser or runtime environments. Without any configuration options, @babel/preset-env behaves exactly the same as @babel/preset-es2015, @babel/preset-es2016 and @babel/preset-es2017 together.
+@babel/preset-react | Converts JSX syntax and strips out type annotations.
+@babel/plugin-proposal-class-properties | Transforms static class properties as well as properties declared with the property initializer syntax.
 #### Front-end bundling: optional
 Pkg. | Desc.
 --- | ---
