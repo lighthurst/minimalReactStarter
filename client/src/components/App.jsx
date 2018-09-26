@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = () => (
-  <div data-test="component-app">
-    Hello darkness, my old friend.
-  </div>
-);
+class App extends Component {
+  state = {
+    data: 'Hello darkness, my old friend.',
+  }
+
+  render() {
+    const { data } = this.state;
+    return (
+      <div data-test="component-app">
+        <h1>{data}</h1>
+      </div>
+    );
+  }
+}
 
 export default App;
