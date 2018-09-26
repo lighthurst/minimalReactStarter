@@ -21,6 +21,7 @@ npx install-peerdeps --dev eslint-config-airbnb
 npm i -D eslint-loader eslint-plugin-ejs babel-eslint
 ```
 > The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm i -D eslint-config-airbnb@17.1.0 eslint@^5.6.0 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.1 eslint-plugin-react@^7.11.1`
+
 Install Normalize.css.
 ```
 npm i -P normalize.css
