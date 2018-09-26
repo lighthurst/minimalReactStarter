@@ -13,7 +13,7 @@ Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See a
 npm i -P react react-dom prop-types express dotenv
 npm i -D webpack webpack-cli @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties jest babel-jest babel-core@^7.0.0-bridge.0 jest-enzyme enzyme enzyme-adapter-react-16
 ```
-> Why babel-core@^7.0.0-bridge.0: [Jest](https://jestjs.io/docs/en/getting-started#using-babel)
+> Why babel-core@^7.0.0-bridge.0? [Jest](https://jestjs.io/docs/en/getting-started#using-babel)
 #### Optional
 Install the linter ESLint configured with Airbnb's rules.
 ```
