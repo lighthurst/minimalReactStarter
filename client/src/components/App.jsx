@@ -9,7 +9,7 @@ class App extends Component {
     const { data } = this.state;
     return (
       <div data-test="component-app">
-        {data}
+        <h1>{data}</h1>
       </div>
     );
   }
