@@ -11,14 +11,14 @@ Here are six things to do to start a minimal React/Express web app from scratch.
 Install React, Webpack, Jest/Enzyme testing, dotenv, and Express for node. See appendix below for descriptions.
 ```
 npm i -P react react-dom prop-types express dotenv
-npm i -D webpack webpack-cli @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-class-properties jest babel-jest babel-core@^7.0.0-bridge.0 jest-enzyme enzyme enzyme-adapter-react-16
+npm i -D webpack webpack-cli @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties jest babel-jest babel-core@^7.0.0-bridge.0 jest-enzyme enzyme enzyme-adapter-react-16
 ```
 > Why babel-core@^7.0.0-bridge.0: [Jest](https://jestjs.io/docs/en/getting-started#using-babel)
 #### Optional
 Install the linter ESLint configured with Airbnb's rules.
 ```
 npx install-peerdeps --dev eslint-config-airbnb
-npm i --D eslint-loader eslint-plugin-ejs babel-eslint
+npm i -D eslint-loader eslint-plugin-ejs babel-eslint
 ```
 > The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm i -D eslint-config-airbnb@17.1.0 eslint@^5.6.0 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.1 eslint-plugin-react@^7.11.1`
 ## 2. Package.json
@@ -31,8 +31,7 @@ Add jest, babel, eslint, and custom script properties to your package.json file.
 "babel": {
   "presets": [ "@babel/env", "@babel/react" ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread"
+    "@babel/proposal-class-properties"
   ]
 },
 "eslintConfig": { "extends": "airbnb", "parser": "babel-eslint" },
