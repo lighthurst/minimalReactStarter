@@ -21,6 +21,10 @@ npx install-peerdeps --dev eslint-config-airbnb
 npm i -D eslint-loader eslint-plugin-ejs babel-eslint
 ```
 > The npx command above is an npm 5+ shortcut installing required peer dependencies for eslint-config-airbnb@latest: `npm i -D eslint-config-airbnb@17.1.0 eslint@^5.6.0 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.1 eslint-plugin-react@^7.11.1`
+Install Normalize.css.
+```
+npm i -P normalize.css
+```
 ## 2. Package.json
 Add jest, babel, eslint, and custom script properties to your package.json file.
 #### jest, babel, eslint
@@ -160,6 +164,7 @@ babel-loader | Webpack plugin for Babel.
 #### Front-end bundling: optional
 Pkg. | Desc.
 --- | ---
+normalize.css | Makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
 css-loader | 
 style-loader | 
 mini-css-extract-plugin | 
